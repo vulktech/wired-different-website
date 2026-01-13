@@ -1,0 +1,53 @@
+﻿# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Editor/IDE folders
+.vs/
+.idea/
+.vscode/
+.cursor/
+
+# Certificates
+https/
+*.pfx
+*.pem
+*.crt
+*.key
+
+# Claude/AI tools
+tmpclaude-*/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+packages/
+*.nupkg
+
+# Node/Frontend
+node_modules/
+dist/
+.output/
+.nuxt/
+*.local
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS generated
+*.tmp
+*.temp
+*.bak
