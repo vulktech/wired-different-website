@@ -1,0 +1,66 @@
+---
+interface Props {
+  progress?: number;
+}
+
+const { progress = 66 } = Astro.props;
+---
+
+<div class="mb-12 max-w-md mx-auto animate-fade-in-slow">
+  <div class="text-sm text-gray-500 mb-3 text-center">
+    <span>Building in progress</span>
+  </div>
+  <div class="h-1.5 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm">
+    <div
+      class="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-violet-500 rounded-full progress-bar relative"
+      style={`width: ${progress}%`}
+    >
+      <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .progress-bar {
+    animation: progress-grow 1.5s ease-out forwards;
+    transform-origin: left;
+  }
+
+  @keyframes progress-grow {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes fade-in-slow {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-slow {
+    animation: fade-in-slow 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+</style>
